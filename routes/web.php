@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+route::get('/', [AdminController::class, 'index'])->name('dashboard');
+
+Route::prefix('admin')->middleware('auth')->group(function () {
+    route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
 });
+
