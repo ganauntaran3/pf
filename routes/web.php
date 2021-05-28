@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +19,21 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-
-route::get('/', [AdminController::class, 'index'])->name('dashboard');
-
-Route::prefix('admin')->middleware('auth')->group(function () {
-    route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-
+Route::middleware('checkGuest')->group(function () {
+    route::get('/login', [AuthController::class, 'index']);
+    route::post('/login/submit', [AuthController::class, 'login'])->name('login');
 });
 
+
+Route::prefix('admin')->middleware('checkAdmin')->group(function () {
+    route::get('/', [AdminController::class, 'index'])->name('dashboard');
+    route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    route::get('/accept/{id}', [UserController::class, 'accept']);
+    route::post('/decline/{id}', [UserController::class, 'decline']);
+});
+
+route::get('/', [UserController::class, 'index']);
+route::post('register', [UserController::class, 'postData'])->name('post.form');
+route::get('/country', [UserController::class, 'searchCountry']);
+route::get('/state', [UserController::class, 'searchState']);
+route::get('/city', [UserController::class, 'searchCity']);
