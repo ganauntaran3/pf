@@ -47,7 +47,6 @@
                         <th>City</th>
                         <th>BSC Address</th>
                         <th>Date</th>
-                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody class="mt-5">
@@ -55,7 +54,7 @@
                             <tr>
                                 <th>{{ $loop->iteration }}</th>
                                 <td>{{ $rgs->doc_type }}</td>
-                                <td><img id="table-img" src="{{ asset('storage/'. $rgs->doc_name) }}" alt="" style="width: 150px"></td>
+                                <td><img src="{{ asset('storage/'. $rgs->doc_name) }}" alt="" style="width: 150px"></td>
                                 <td>{{ $rgs->fullname }}</td>
                                 <td>{{ $rgs->gender }}</td>
                                 <td>{{ $rgs->address }}</td>
@@ -65,28 +64,12 @@
                                 <td>{{ $rgs->city }}</td>
                                 <td>{{ $rgs->bsc_address }}</td>
                                 <td>{{ $rgs->created_at }}</td>
-                                <td class="table-actions">
-
-                                  </td>
                             </tr>
                         @endforeach
                     </tbody>
                   </table>
                 </div>
               </div>
-
-              <div id="myModal" class="modal-table">
-
-                <!-- The Close Button -->
-                <span class="close modal-times">&times;</span>
-
-                <!-- Modal Content (The Image) -->
-                <img class="modal-content" id="modal-img">
-
-                <!-- Modal Caption (Image Text) -->
-                <div id="caption"></div>
-              </div>
-
         </div>
     </div>
 </div>

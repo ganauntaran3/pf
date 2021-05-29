@@ -8,7 +8,7 @@
   <meta name="author" content="Creative Tim">
   <title>{{ env('APP_NAME') }}</title>
   <!-- Favicon -->
-  <link rel="icon" href="{{ asset('img/Logo (1).png') }}" type="image/png">
+  <link rel="icon" href="{{ asset('/assets/img/brand/favicon.png') }}" type="image/png">
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <!-- Icons -->
@@ -31,7 +31,7 @@
       <!-- Brand -->
       <div class="sidenav-header d-flex align-items-center">
         <a class="navbar-brand" href="../../pages/dashboards/dashboard.html">
-        <img src="" class="navbar-brand-img" alt="{{ env('APP_NAME') }}"> {{-- place the company image here --}}
+        <img src="{{ asset('assets/img/brand/pf.png') }}" class="navbar-brand-img" alt="{{ env('APP_NAME') }}"> {{-- place the company image here --}}
         </a>
         <div class="ml-auto">
           <!-- Sidenav toggler -->
@@ -49,20 +49,20 @@
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
           <!-- Nav items -->
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="{{ url('admin/') }}">
+            <li class="nav-item ">
+              <a class="nav-link {{ Request::is('admin') ? 'active' : '' }}" href="{{ url('admin/') }}">
                 <i class="fas fa-tachometer-alt text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="{{ url('admin/accepted') }}">
+              <a class="nav-link {{ Request::is('admin/accepted') ? 'active' : '' }}" href="{{ url('admin/accepted') }}">
                 <i class="fas fa-calendar-check text-success"></i>
                 <span class="nav-link-text">Accepted Registration</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="{{ url('admin/declined') }}">
+              <a class="nav-link {{ Request::is('admin/declined') ? 'active' : '' }}" href="{{ url('admin/declined') }}">
                 <i class="fas fa-calendar-times text-danger"></i>
                 <span class="nav-link-text">Declined Registration</span>
               </a>

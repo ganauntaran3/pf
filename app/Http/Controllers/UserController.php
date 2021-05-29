@@ -65,11 +65,6 @@ class UserController extends Controller
         return redirect('/')->with('message', 'Your Data Successfully sended');
     }
 
-    public function accept($id){
 
-        Registration::where('id', $id)->update([
-            'status' => 'accepted'
-        ]);
-    }
 
 }

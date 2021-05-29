@@ -55,7 +55,7 @@
                             <tr>
                                 <th>{{ $loop->iteration }}</th>
                                 <td>{{ $rgs->doc_type }}</td>
-                                <td><img src="{{ asset('storage/'. $rgs->doc_name) }}" alt="" style="width: 150px"></td>
+                                <td><img id="table-img" src="{{ asset('storage/'. $rgs->doc_name) }}" alt="" style="width: 150px"></td>
                                 <td>{{ $rgs->fullname }}</td>
                                 <td>{{ $rgs->gender }}</td>
                                 <td>{{ $rgs->address }}</td>
@@ -66,12 +66,12 @@
                                 <td>{{ $rgs->bsc_address }}</td>
                                 <td>{{ $rgs->created_at }}</td>
                                 <td class="table-actions">
-                                        <a href="admin/decline/{{ $rgs->id }}" class="btn btn-icon btn-danger">
+                                        <a onclick="return status('Are you sure want to decline this data registration?')" href="admin/decline/{{ $rgs->id }}" class="btn btn-icon btn-danger">
                                                 <span class="btn-inner--icon"><i class="fas fa-times text-white"></i></span>
                                                 <span class="btn-inner--text text-white">Decline</span>
                                         </a>
                                         <a href="admin/accept/{{ $rgs->id }}" class="btn btn-icon btn-success" >
-                                                <span class="btn-inner--icon"><i class="fas fa-clear"></i></span>
+                                                <span class="btn-inner--icon"><i class="fas fa-check"></i></span>
                                                 <span class="btn-inner--text text-white">Accept</span>
                                         </a>
                                   </td>
@@ -80,6 +80,19 @@
                     </tbody>
                   </table>
                 </div>
+
+                <div id="myModal" class="modal-table">
+
+                    <!-- The Close Button -->
+                    <span class="close modal-times">&times;</span>
+
+                    <!-- Modal Content (The Image) -->
+                    <img class="modal-content" id="modal-img">
+
+                    <!-- Modal Caption (Image Text) -->
+                    <div id="caption"></div>
+                  </div>
+
               </div>
         </div>
     </div>

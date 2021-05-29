@@ -10,12 +10,12 @@
   <!-- Canonical SEO -->
   <link rel="canonical" href="https://www.creative-tim.com/product/argon-dashboard-pro" />
   <!-- Favicon -->
-  <link rel="icon" href="../../assets/img/brand/favicon.png" type="image/png">
+  <link rel="icon" href="{{ asset('assets/img/brand/favicon.png')}}" type="image/png">
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <!-- Icons -->
   <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}" type="text/css">
-  
+
   <!-- Argon CSS -->
   <link rel="stylesheet" href="{{ asset('assets/css/argon.css') }}" type="text/css">
 
