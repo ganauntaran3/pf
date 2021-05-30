@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExportRegistration;
 use Illuminate\Http\Request;
 use App\Models\Registration;
 use App\Notifications\EmailNotification;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
 {
@@ -55,6 +57,10 @@ class AdminController extends Controller
         return view('admin.accepted', [
             'rgs' => $rgs
         ]);
+    }
+
+    public function export(){
+        return Excel::download(new ExportRegistration, 'whitelist.xlsx');
     }
 
 }

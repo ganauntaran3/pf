@@ -19,7 +19,7 @@ class checkAdmin
         if($request->session()->get('login_status') == 'admin') {
             return $next($request);
         }elseif($request->session()->get('login_status') == null){
-            return redirect('/');
+            return redirect('/login');
         }else{
             abort(401);
         }

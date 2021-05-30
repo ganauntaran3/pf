@@ -7,7 +7,7 @@
 
             @if (session()->has('message'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+                <span class="alert-icon"><i class="fas fa-check"></i></span>
                 <span class="alert-text">{{ session('message') }}</span>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -22,12 +22,12 @@
                     <div class="col-6">
                       <h3 class="mb-0">User</h3>
                     </div>
-                    {{-- <div class="col-6 text-right">
-                        <a class="btn btn-icon btn-primary text-white" href="{{ url('admin/product-create') }}">
-                            <span class="btn-inner--icon"><i class="fas fa-plus-square"></i></span>
-                            <span class="btn-inner--text">Add New Product</span>
+                    <div class="col-6 text-right">
+                        <a class="btn btn-icon btn-primary text-white" href="{{ url('admin/export') }}">
+                            <span class="btn-inner--icon"><i class="fas fa-file-export"></i></span>
+                            <span class="btn-inner--text">Export</span>
                           </a>
-                    </div> --}}
+                    </div>
                   </div>
                 </div>
                 <!-- Light table -->

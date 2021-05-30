@@ -19,6 +19,7 @@ Route::prefix('admin')->middleware('checkAdmin')->group(function () {
     route::get('/decline/{id}', [AdminController::class, 'decline']);
     route::get('/accepted', [AdminController::class, 'accepted']);
     route::get('/declined', [AdminController::class, 'declined']);
+    route::get('/export', [AdminController::class, 'export']);
 });
 
 route::get('/', [UserController::class, 'index']);
