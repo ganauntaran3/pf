@@ -3148,6 +3148,8 @@ fieldset:disabled a.btn
     background-color: #5e72e4;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
 }
+
+
 .btn-primary:hover
 {
     color: #fff;
@@ -8490,6 +8492,20 @@ a.close.disabled
 {
     background-color: #5e72e4 !important;
 }
+
+.bg-plastic
+{
+    background-color: #1c920e !important;
+}
+
+a.bg-plastic:hover,
+a.bg-plastic:focus,
+button.bg-plastic:hover,
+button.bg-plastic:focus
+{
+    background-color: #90f76c !important;
+}
+
 
 a.bg-primary:hover,
 a.bg-primary:focus,
