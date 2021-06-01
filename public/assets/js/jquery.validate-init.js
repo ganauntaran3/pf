@@ -1,7 +1,7 @@
 (function ($) {
     "use strict"
 
-jQuery("#gopegi-form").validate({
+jQuery("#pf-form").validate({
     rules: {
         "fullname": {
             required: true
@@ -22,6 +22,10 @@ jQuery("#gopegi-form").validate({
         },
         "address": {
             required: true
+        },
+        "amount" : {
+            required: true,
+            digits: true
         },
         "country": {
             required: !0
@@ -45,6 +49,10 @@ jQuery("#gopegi-form").validate({
         "gender": "Please select a gender!",
         "fullname": {
             required: "Please enter your fullname!",
+        },
+        "amount": {
+            required: "Please enter an amount!",
+            digits: "Please enter a valid digits!"
         },
         "email": "Please enter a valid email address!",
         "address": "Please enter your full address!",

@@ -7,19 +7,18 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class EmailNotification extends Notification
+class AcceptNotification extends Notification
 {
     use Queueable;
-    private $mailer;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($mailer)
+    public function __construct()
     {
-        $this->mailer = $mailer;
+        //
     }
 
     /**
@@ -42,14 +41,7 @@ class EmailNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                        ->view('vendor.notifications.email')
-                        ->attach($this->mailer['path']);
-                    // ->greeting($this->mailer['header'])
-                    // ->attach('storage/private-sale.docx')
-                    // ->line($this->mailer['appreciate'])
-                    // ->line($this->mailer['text'])
-                    // ->line($this->mailer['end']);
-
+            ->view('vendor.notifications.accept');
     }
 
     /**

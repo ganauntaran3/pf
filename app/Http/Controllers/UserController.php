@@ -55,6 +55,7 @@ class UserController extends Controller
             'fullname' => request()->fullname,
             'email' => request()->email,
             'address' => request()->address,
+            'amount' => request()->amount,
             'country' => request()->country,
             'state' => request()->state,
             'city' => request()->city,

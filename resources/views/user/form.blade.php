@@ -35,7 +35,7 @@
     <!-- Card body -->
         <div class="card-body">
 
-        <form method="POST" id="gopegi-form" action="{{ route('post.form') }}" enctype="multipart/form-data">
+        <form method="POST" id="pf-form" action="{{ route('post.form') }}" enctype="multipart/form-data">
 
         @csrf
 
@@ -88,17 +88,24 @@
         </div>
 
         <div class="form-row">
-            <div class="col-md-6 mb-3">
+            <div class="col-md-4 mb-3">
                 <div class="form-group">
                     <label class="form-control-label" for="email">Email</label>
                     <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" >
                 </div>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-5 mb-3">
                 <div class="form-group">
                     <label class="form-control-label" for="address">Full Address</label>
                     <input type="text" class="form-control" id="address" name="address" placeholder="Enter your address" >
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <div class="form-group">
+                    <label class="form-control-label" for="amount">Amount</label>
+                    <input type="text" class="form-control" id="amount" name="amount" placeholder="Enter.." >
                 </div>
             </div>
         </div>

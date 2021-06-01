@@ -21,11 +21,13 @@ class CreateRegistrationsTable extends Migration
             $table->string('fullname', 50);
             $table->string('address', 50);
             $table->string('email', 50);
+            $table->integer('amount');
             $table->string('country');
             $table->string('state');
             $table->string('city');
             $table->text('bsc_address');
             $table->enum('status', ['0', 'declined', 'accepted']);
+            $table->enum('notified', [true, false])->default(false);
             $table->timestamps();
         });
     }

@@ -16,6 +16,7 @@ Route::prefix('admin')->middleware('checkAdmin')->group(function () {
     route::get('/', [AdminController::class, 'index'])->name('dashboard');
     route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     route::get('/accept/{id}', [AdminController::class, 'accept']);
+    route::get('/send-notification', [AdminController::class, 'notification']);
     route::get('/decline/{id}', [AdminController::class, 'decline']);
     route::get('/accepted', [AdminController::class, 'accepted']);
     route::get('/declined', [AdminController::class, 'declined']);
