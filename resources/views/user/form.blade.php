@@ -5,7 +5,7 @@
 
     @if(session()->has('message'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+        <span class="alert-icon"><i class="fas fa-thumbs-up"></i></span>
         <span class="alert-text"><strong>Success!</strong> {{session('message')}} </span>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -15,7 +15,7 @@
 
     @if(count($errors) > 0)
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+        <span class="alert-icon"><i class="fas fa-thumbs-down"></i></span>
         @foreach ($errors->all() as $error)
         <span class="alert-text"><strong>Danger!</strong> {{ $error }} <br/></span>
         @endforeach

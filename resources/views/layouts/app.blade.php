@@ -289,7 +289,7 @@
                   <span>Settings</span>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="#!" class="dropdown-item">
+                <a href="{{ route('logout') }}" class="dropdown-item">
                   <i class="fas fa-power-off"></i>
                   <span>Logout</span>
                 </a>

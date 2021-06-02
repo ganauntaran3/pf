@@ -29,9 +29,11 @@ function showImage(element,i){
 //Jquery
 $(document).ready(function (){
 
-
+    //add class for styling
+    $("button.buttons-copy").addClass("mx-1")
     $("div.dataTables_paginate").addClass("mb-3");
 
+    //autocomplete input
     $("#country").typeahead({
         source: function(country, process){
             return $.get(coPath, {country:country}, function(data){

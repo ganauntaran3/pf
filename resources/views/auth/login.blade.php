@@ -38,7 +38,7 @@
                     <div class="form-group mb-3">
                       <div class="input-group input-group-merge input-group-alternative">
                         <div class="input-group-prepend">
-                          <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                          <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
                         <input class="form-control" placeholder="Username" name="username" type="text">
                       </div>
@@ -58,7 +58,7 @@
                       </label>
                     </div> --}}
                     <div class="text-center">
-                      <button type="submit"  class="btn btn-primary my-4">Sign in</button>
+                      <button type="submit"  class="btn btn-primary my-4">Login</button>
                     </div>
                   </form>
                 </div>

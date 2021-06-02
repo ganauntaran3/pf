@@ -22,7 +22,7 @@ class AdminController extends Controller
 
     public function notification(){
         set_time_limit(1500);
-        $rgs = Registration::where('notified', 'false')->get();
+        $rgs = Registration::where('notified', 'false')->take(50)->get();
         $rgsCount = $rgs->count();
         $mailer = [
             'path' => 'storage/private-sale.docx'
@@ -33,15 +33,11 @@ class AdminController extends Controller
                 'notified' => true
             ];
             Registration::where('notified', 'false')->update($insEmail);
-            $sended = Notification::send($rgs, new EmailNotification($mailer));
-            dd($sended);
-            return redirect('admin/')->with('message', 'Verification is sended');
+            Notification::send($rgs, new EmailNotification($mailer));
+            return redirect('admin/')->with('message', 'Notification is sended');
         }else{
             return redirect('admin/')->with('message', 'All user is already got notified');
         }
-        // $sended = Notification::send($rgs, new EmailNotification($mailer));
-
-
 
     }
 
@@ -55,7 +51,7 @@ class AdminController extends Controller
 
         Notification::send($rgs, new AcceptNotification());
 
-        return redirect('admin/accepted')->with('message', 'Data was Accepted');
+        return redirect('admin')->with('message', 'Data was Accepted');
     }
 
     public function decline($id){
@@ -64,7 +60,7 @@ class AdminController extends Controller
             'status' => 'declined'
         ]);
 
-        return redirect('admin/declined')->with('message', 'Data was Declined');
+        return redirect('admin')->with('message', 'Data was Declined');
     }
 
     public function accepted(){
@@ -76,7 +72,7 @@ class AdminController extends Controller
 
     public function declined(){
         $rgs = Registration::where('status', 'declined')->get();
-        return view('admin.accepted', [
+        return view('admin.declined', [
             'rgs' => $rgs
         ]);
     }

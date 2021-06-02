@@ -40,21 +40,27 @@
                 <div class="table-responsive">
                   <table class="table align-items-center table-flush table-striped" id="datatable-buttons">
                     <thead class="thead-light">
+                      <tr class="text-center">
+                        <th rowspan="2">#</th>
+                        <th rowspan="2">Document Type</th>
+                        <th rowspan="2">Document Image</th>
+                        <th rowspan="2">Fullname</th>
+                        <th rowspan="2">Gender</th>
+                        <th rowspan="2">Address</th>
+                        <th colspan="3">Domicile</th>
+                        <th rowspan="2">Email</th>
+                        <th rowspan="2">Amount</th>
+                        <th rowspan="2">BSC Address</th>
+                        <th rowspan="2">Date</th>
+                        <th rowspan="2">Action</th>
+                      </tr>
+
                       <tr>
-                        <th>#</th>
-                        <th>Document Type</th>
-                        <th>Document Image</th>
-                        <th>Fullname</th>
-                        <th>Gender</th>
-                        <th>Address</th>
-                        <th>Email</th>
                         <th>Country</th>
                         <th>State</th>
                         <th>City</th>
-                        <th>BSC Address</th>
-                        <th>Date</th>
-                        <th>Action</th>
                       </tr>
+
                     </thead>
                     <tbody class="mt-5">
                         @foreach ($rgs as $rgs)
@@ -65,10 +71,11 @@
                                 <td>{{ $rgs->fullname }}</td>
                                 <td>{{ $rgs->gender }}</td>
                                 <td>{{ $rgs->address }}</td>
-                                <td>{{ $rgs->email }}</td>
                                 <td>{{ $rgs->country }}</td>
                                 <td>{{ $rgs->state }}</td>
                                 <td>{{ $rgs->city }}</td>
+                                <td>{{ $rgs->email }}</td>
+                                <td>{{ $rgs->amount }}</td>
                                 <td>{{ $rgs->bsc_address }}</td>
                                 <td>{{ $rgs->created_at }}</td>
                                 <td class="table-actions">
